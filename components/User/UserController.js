@@ -137,10 +137,16 @@ const getById = async (id) => {
         return null;
     }
 }
-
+const getByStudentCode = async (studentCode) => {
+    try {
+        return await UserService.getByStudentCode(studentCode);
+    } catch (error) {
+        return null;
+    }
+}
 module.exports = {
     login, register, deleteUser,
     updateUser, getAllUser, search,
     changePassword, sendMail, sendVerifyCode,
-    verifyCode, loginGoogle, getById
+    verifyCode, loginGoogle, getById,getByStudentCode
 };
